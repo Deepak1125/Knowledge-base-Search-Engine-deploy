@@ -39,18 +39,18 @@ jobs:
           docker push deepakchandra1125/knowledge-base-search-engine:${{ github.event.client_payload.tag }}
           docker push deepakchandra1125/knowledge-base-search-engine:latest
 
-      - name: Update docker-compose.yml
+      - name: Update docker-compose.yaml
         run: |
           sed -i \
           "s|image:.*|image: deepakchandra1125/knowledge-base-search-engine:${{ github.event.client_payload.tag }}|" \
-          docker-compose.yml
+          docker-compose.yaml
 
       - name: Commit deployment changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git add docker-compose.yml
+          git add docker-compose.yaml
 
           git commit -m "Deploy image ${{ github.event.client_payload.tag }}" || echo "No changes"
 
