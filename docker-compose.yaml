@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  knowledge-base-search-engine:
+    image: deepakchandra1125/knowledge-base-search-engine:latest
+
+    container_name: knowledge-base-search-engine
+
+    ports:
+      - "8501:8501"
+
+    restart: always
+
+    environment:
+      STREAMLIT_SERVER_PORT: 8501
+      STREAMLIT_SERVER_ADDRESS: 0.0.0.0
+
+    volumes:
+      - knowledge-data:/app
+
+volumes:
+  knowledge-data:
