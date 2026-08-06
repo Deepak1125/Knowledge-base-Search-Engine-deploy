@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   knowledge-base-search-engine:
-    image: deepakchandra1125/knowledge-base-search-engine:v0.1.3
+    image: deepakchandra1125/knowledge-base-search-engine:v0.0.5
 
     container_name: knowledge-base-search-engine
 
